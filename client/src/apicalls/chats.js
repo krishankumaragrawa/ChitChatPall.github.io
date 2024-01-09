@@ -2,7 +2,7 @@ import { axiosInstance } from ".";
 
 export const GetAllChats = async () => {
   try {
-    const response = await axiosInstance.get("/api/chats/get-all-chats");
+    const response = await axiosInstance.get("https://chitchatpall.onrender.com/api/chats/get-all-chats");
     return response.data;
   } catch (error) {
     throw error;
@@ -11,7 +11,7 @@ export const GetAllChats = async () => {
 
 export const CreateNewChat = async (members) => {
   try {
-    const response = await axiosInstance.post("/api/chats/create-new-chat", {
+    const response = await axiosInstance.post("https://chitchatpall.onrender.com/api/chats/create-new-chat", {
       members,
     });
     return response.data;
@@ -23,7 +23,7 @@ export const CreateNewChat = async (members) => {
 
 export const ClearChatMessages = async (chatId) => {
   try {
-    const response = await axiosInstance.post("/api/chats/clear-unread-messages", {
+    const response = await axiosInstance.post("https://chitchatpall.onrender.com/api/chats/clear-unread-messages", {
       chat: chatId,
     });
     return response.data;
