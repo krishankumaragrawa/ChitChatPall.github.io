@@ -19,6 +19,7 @@ const io = require("socket.io")(server, {
   cors: {
     origin: ["http://localhost:3000","https://chit-chat-pall-github-io.vercel.app"],
     methods: ["GET", "POST"],
+      credentials: true,
   },
 });
 
