@@ -14,7 +14,13 @@ app.use(
 );
 
 const server = require("http").createServer(app);
-
+const corsOptions = {
+  // cross origin allowed.
+      origin: ["http://localhost:3000","https://chit-chat-pall-github-io.vercel.app"],
+   methods: ["GET", "POST"],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 const io = require("socket.io")(server, {
   cors: {
     origin: ["http://localhost:3000","https://chit-chat-pall-github-io.vercel.app"],
